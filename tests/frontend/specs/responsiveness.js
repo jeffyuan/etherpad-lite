@@ -19,7 +19,7 @@ describe('Responsiveness of Editor', function() {
     helper.newPad(cb);
     this.timeout(6000);
   });
-  xit('Fast response to keypress in pad with large amount of contents', function(done) {
+  it('Fast response to keypress in pad with large amount of contents', function(done) {
     var inner$ = helper.padInner$;
     var chrome$ = helper.padChrome$;
     var chars = '0000000000'; // row of placeholder chars
@@ -68,8 +68,7 @@ describe('Responsiveness of Editor', function() {
         var end = Date.now(); // get the current time
         var delay = end - start; // get the delay as the current time minus the start time
 
-        console.log('delay:', delay);
-        expect(delay).to.be.below(200);
+        expect(delay).to.be.below(300);
         done();
       }, 1000);
 
